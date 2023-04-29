@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import userRoutes from './routes/userRoutes.js'
+import blogRoutes from './routes/blogRoutes.js'
 import dotenv from 'dotenv'
 
 dotenv.config()
@@ -15,6 +16,7 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.use('/users', userRoutes)
+app.use('/blogs', blogRoutes)
 
 mongoose.connect(DB_URL, {
   useNewUrlParser: true,
